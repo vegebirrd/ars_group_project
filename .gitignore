@@ -1,0 +1,42 @@
+# Datasets, downloaded APIs, generated tables/figures and local reports
+/data/
+/outputs/
+/results/
+/inputs/
+/processed/
+/local_only/
+*.csv
+*.parquet
+*.xlsx
+*.xls
+*.sqlite
+*.db
+*.jsonl
+*.pkl
+*.pickle
+*.pdf
+*.zip
+*.html
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+.env.*
+
+# R & Quarto
+.Rhistory
+.RData
+*.rds
+*.RDS
+.Rproj.user/
+renv/library/
+renv/staging/
+/.quarto/
+/reports/*_files/
+
+# Operating system
+.DS_Store
+*.log

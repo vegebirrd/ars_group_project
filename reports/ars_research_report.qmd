@@ -1,0 +1,54 @@
+---
+title: "The Tinashe Effect or the Tyga Effect?"
+subtitle: "Music Criticism, Audience Attention, and Cultural Gatekeeping"
+format:
+  html:
+    toc: true
+execute:
+  echo: false
+  warning: false
+---
+
+```{r}
+library(readr)
+library(knitr)
+```
+
+## Research questions
+
+**RQ1.** Are evaluation valence and extremity associated with immediate attention, and how long do those associations persist?
+
+**RQ2.** Does prior visibility shape who gains attention from professional criticism?
+
+## Sample
+
+```{r}
+kable(read_csv("outputs/r/coverage.csv", show_col_types = FALSE))
+```
+
+## RQ1 · Review score and attention
+
+```{r}
+reg <- read_csv("outputs/r/RQ1_regressions.csv", show_col_types = FALSE)
+kable(reg[reg$model %in% c("M1_score_only", "M2_quadratic", "M3L_pretrend", "M3_quadratic_controlled"), ])
+```
+
+![](../outputs/r/figures/02_event_time_attention.png)
+
+## RQ2 · Prior popularity and distribution
+
+```{r}
+kable(read_csv("outputs/r/RQ2_popularity_marginal_score_slopes.csv", show_col_types = FALSE))
+```
+
+![](../outputs/r/figures/07_absolute_attention_by_popularity.png)
+
+## Release timing and alternative specifications
+
+```{r}
+kable(read_csv("outputs/r/RQ1_robustness.csv", show_col_types = FALSE))
+```
+
+## Discussion
+
+Interpret score associations alongside publication timing, album release, pre-review attention and the concentration of absolute versus proportional gains. Chart visibility and professional review language are reported as complementary outcomes.
